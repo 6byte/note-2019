@@ -1,0 +1,17 @@
+1.继承Runnable
+2.创建需要开启多线程的对象
+3.		Thread thread = new Thread(new Method());
+		thread.start();	
+public class Method implements Runnable{
+	@Override
+	public void run(){
+		for(int flag = 0 ; flag <1000;flag++){
+		System.out.println("Name : "+ flag);
+	}
+	}
+	public static void  main(String []args){
+		Method method = new Method();
+		Thread thread = new Thread(method) 
+		thread.start();	
+	}
+}

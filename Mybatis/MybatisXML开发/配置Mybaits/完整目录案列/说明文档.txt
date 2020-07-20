@@ -1,0 +1,5 @@
+Mybatits有四个必须文件
+1.javaBean 		用于存储数据库映射关系字段
+2.Main			用于执行语句的主方法
+3.mybatis-conf.xml		用于初始化Mybatis的基本信息
+4.EmployeeMapper.xml	用于配置Sql的执行语句

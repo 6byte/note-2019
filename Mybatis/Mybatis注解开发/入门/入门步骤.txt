@@ -1,0 +1,6 @@
+Myabatis入门步骤
+1.创建JavaBean类，用于映射数据库表
+2.创建	日志+myabatis.xml   
+3.创建IDao接口，用于定义操作
+4.创建Service类，用于实现IDao接口
+5.创建Test类，用于测试

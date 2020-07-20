@@ -1,0 +1,8 @@
+
+<1>在Bean中定义
+	@Value("李四")
+	private String name;
+	@Value("15")
+	private Integer age;
+	@Value("越南")
+	private String address;

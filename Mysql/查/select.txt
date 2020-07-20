@@ -1,0 +1,2 @@
+select 字段名 from 表名 where 条件
+select name from star where id =1055132;

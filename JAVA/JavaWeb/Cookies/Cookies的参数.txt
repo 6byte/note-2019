@@ -1,0 +1,13 @@
+创建一个COOKIES对象:	Cookie cookie = new Cookie("key","value");
+			Cookie cookie = new Cookie("getTime",String.valueOf(System.currentTimeMillis()));
+设置最大生命周期		cookie.setMaxAge(int i);
+			//以秒为单位
+			//如果没有设置，默认i=-1
+			//i = 0 ,表示cookies马上失效
+			//i>0,表示在i秒后失效
+			//i<0,表示关闭浏览器后失效
+
+设置Cookies的来源		cookie.setPath(uri);
+			//没有设置，默认为产生cookies的应用路径
+			//设置后，只有发送该uri下的请求
+		

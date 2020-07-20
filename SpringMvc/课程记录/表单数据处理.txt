@@ -1,0 +1,13 @@
+Spring课程记录
+**接收表单中的时间参数
+在Bean中添加注解		@DateTimeFormat(pattern = "yyyy-MM-dd")
+
+** 表单数组
+用于接收复选组数据
+@RequestMapping(value = "/hey.action")
+public String welcome(String username,String[] hobby){----}
+
+
+**表单对象
+将表单的值直接赋给Bean,表单参数和Bean中的参数要一致
+public String welcome(Bean bean) {}

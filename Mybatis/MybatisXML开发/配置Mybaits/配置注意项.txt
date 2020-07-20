@@ -1,0 +1,10 @@
+配置注意项目：
+1.mybatis-conf.xml目录下的 
+<mappers>
+ 	<mapper resource="EmployeeMapper.xml"/>
+//必须与mapper文件匹配
+ </mappers>
+
+2.主函数中的
+String resource = "mybatis-conf.xml";
+必须与mybatis-conf.xml匹配

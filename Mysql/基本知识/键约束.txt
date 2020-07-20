@@ -1,0 +1,43 @@
+--------------------->主键约束：	primary key
+create table game(
+	name varchar(10) primary key
+);
+======>它能够唯一确定一张表中的一条记录，使字段不为空也不重复，主键能有一个
+
+
+
+--------------------->联合主键：	primary key(name,age)
+create table game(
+	name varchar(10),
+	age int ,
+	primary key(name,age)
+);
+======>name 和 age只允许有一项重复
+
+
+
+--------------------->自增约束：	auto_increment
+create table game(
+	name varchar(20),
+	id int auto_increment
+)
+======>它能自动补全信息
+
+
+
+
+--------------------->唯一约束： unique
+create table game(
+	name varchar(2) unique
+)
+======>不能存在重复值、
+
+
+
+--------------------->非空约束：	not null
+create table game (
+	name varchar(2) not null
+)
+
+--------------------->外键约束
+主表中没有的数据，在副表中不可以使用

@@ -1,0 +1,6 @@
+整型转字符串有叁种方法:
+　　1.) String s = String.valueOf(i);
+
+　　2.) String s = Integer.toString(i);
+
+　　3.) String s = "" + i;

@@ -1,0 +1,7 @@
+1.注意事项,必须分号结尾
+查看端口号	show global variables like 'port';
+
+显示所有数据库	show databases 
+创建数据库	create database TEST;
+删除数据库	drop database TEST;
+使用数据库	use TST

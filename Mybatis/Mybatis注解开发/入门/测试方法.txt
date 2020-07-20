@@ -1,0 +1,13 @@
+	public static void main(String[] args) throws IOException {
+		// 对应Mysql连接的属性文件
+		String resource = "mybatis-conf.xml";
+		// 获取写入流
+		SqlSessionFactory sf = new SqlSessionFactoryBuilder().build(Resources.getResourceAsStream(resource));
+		// sesion里面有各种增删查改函数
+		SqlSession session = sf.openSession();
+		IUserDao mapper = session.getMapper(IUserDao.class);
+		List<UserBean> findAll = mapper.findAll();
+		for (UserBean userBean : findAll) {
+			System.out.println(userBean.getName());
+		}
+	}

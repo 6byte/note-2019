@@ -1,0 +1,19 @@
+1.通过类的静态属性获取
+Class clazz = testBean.class;
+2.通过运行时的对象获取
+TestBean tb = new TestBean();
+Class clazz = tb.getClass();
+3.通过Class的静态方法进行获取
+try{
+	String ClassName = "包名+类名";
+	Class clazz = Class.Forname(ClassName);
+}
+catch(e){
+	e.printrance();
+}
+4.通过ClassLoader获取
+	ClassLoader classLoader = this.getClass().getClassLoader();
+	Class clazz = classLoader.loadClass("");
+	    
+反射对象实例化
+	用newInstance();创建实例

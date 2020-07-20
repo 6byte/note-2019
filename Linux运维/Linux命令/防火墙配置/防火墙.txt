@@ -1,0 +1,8 @@
+安装防火墙	访问网址		https://blog.csdn.net/qiushisoftware/article/details/90691460
+命令		yum install iptables-services
+创建防火墙	systemctl enable iptables
+打开防火墙	service iptables start
+关闭防火墙	service iptables stop	重启恢复
+防火墙状态	service iptables status	
+永久生效		chkconfig iptables on    	防火墙功能永久开启
+永久关闭		chkconfig iptables off    

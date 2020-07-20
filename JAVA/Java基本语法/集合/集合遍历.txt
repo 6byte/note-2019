@@ -1,0 +1,5 @@
+第一中转换成数组
+Object object = arrayList.toArray();
+		for (String string : arrayList) {
+			System.out.println(string);
+		}

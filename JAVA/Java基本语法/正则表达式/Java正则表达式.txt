@@ -1,0 +1,9 @@
+String regx = "[1-9][0-9]{4,10}";
+String qqString = "2121321";
+boolean flag = qqString.matches(regx);
+
+
+Java正则表达式用法
+1.定义一个正则表达式 字符串      String regx = "[1-9][0-9]{4,10}";
+2.定义需要匹配的字符串           String qqString = "2121321";
+3.返回匹配结果                  boolean flag = qqString.matches(regx);

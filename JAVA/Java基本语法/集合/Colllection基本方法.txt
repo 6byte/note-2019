@@ -1,0 +1,11 @@
+		// add()		添加元素
+		//clear()		清空集合
+		//isEmpty() 	判断是否为空
+		//ArrayList初始化为10
+		//remove()		删除一个元素
+		//size()		查看集合长度
+		
+		//a.addAll(b)			把b添加进a集合中
+		//a.removeAll(b)		删除集合a和b相同的元素
+		//a.retainAll(b)		求两个集合的交集,包含所有
+		ArrayList<String> arrayList = new ArrayList

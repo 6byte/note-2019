@@ -1,0 +1,22 @@
+	public void sessionGetted() throws IOException {
+		//对应Mysql连接的属性文件
+		String resource = "mybatis-conf.xml";
+		//获取写入流
+		SqlSessionFactory sf =new SqlSessionFactoryBuilder().build(Resources.getResourceAsStream(resource));
+		//sesion里面有各种增删查改函数
+		SqlSession session = sf.openSession();
+
+		Employee employee = new Employee();
+		//给对象赋值
+		employee.setLastname("JackSon");
+		employee.setId(759);
+		employee.setGender("man");
+		employee.setEmail("sdwq@msn.com");
+		//第一个参数是Mapper.xml中的ID
+		//第二个参数是Bean对象
+		session.insert("insertUser", employee);
+		//必须持久化，否则不能插入
+		session.commit();
+		//必须关闭
+		session.close();
+	}

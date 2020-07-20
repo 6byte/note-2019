@@ -1,0 +1,20 @@
+beforeCreate() {
+					//初始化
+					console.log('初始化');
+				},
+				beforeUpdate() {
+					//数据已经被更新,但是界面没有被更新
+					console.log(document.getElementById("app").innerHTML+"界面元素");
+					console.log("--"+this.msg);
+				},
+				updated() {
+					//这一步,界面都已经更新完毕
+					console.log(document.getElementById("app").innerHTML+"界面元素");
+					console.log("--"+this.msg);
+				},
+				mounted() {
+					
+				},
+				destroyed() {
+					console.log("销毁函数");
+				}

@@ -1,0 +1,4 @@
+异常：	Exception in thread “main” java.sql.SQLException: The server time zone value 
+解决	在mysql 中设置set global time_zone='+8:00';
+
+查看端口号	show global variables like 'port';

@@ -1,0 +1,9 @@
+3种方法初始化Bean
+1.通过配置@Bean
+2.通过继承接口	InitializingBean
+3.通过注解JSR250规范	
+	@PreDestroy	销毁
+	@PostConstruct	初始化
+接口BeanNameAware		方法setBeanName			获得当前被初始化bean的名字			
+接口BeanFactoryAware		方法setBeanFactory	：		获得容器里面大部分对象
+接口ApplicationContextAware	方法setApplicationContext		获得所有Bean的内容

@@ -1,0 +1,1 @@
+获取JAVAWEB项目路径：		getServletContext().getRealPath("/");

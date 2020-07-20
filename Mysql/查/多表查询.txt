@@ -1,0 +1,6 @@
+交叉查询			么得意义
+内连接查询
+	隐式内连接查询	没有Inner join
+		select *from 主表，从表 where 主键.主键 = 从表.外键
+	显示内连接查询	有Inner join
+		select *from 主表，从表 on 主键.主键 = 从表.外键

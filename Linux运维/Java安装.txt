@@ -1,0 +1,15 @@
+一键安装			yum install lrzsz 
+
+
+详情查看网页		https://www.cnblogs.com/wjup/p/11041274.html
+1.			yum install java-1.8.0-openjdk.x86_64
+2.			vi /etc/profile	配置Java_Home
+#在文件最后加入下面代码
+#######################################################
+	#set java environment
+	JAVA_HOME=/usr/lib/jvm/jre-1.6.0-openjdk.x86_64
+	PATH=$PATH:$JAVA_HOME/bin
+	CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+	export JAVA_HOME CLASSPATH PATH
+#######################################################
+3			. /etc/profile 	运行生效

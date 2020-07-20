@@ -1,0 +1,10 @@
+@RequestParam	作为参数使用
+用法	
+	@RequestParam(value = "name")String username
+	
+实例
+	public String welcome(	@RequestParam(value = "name")String username	) {
+		return "success";
+	}
+说明
+	仅当username	== name 时才会返回success

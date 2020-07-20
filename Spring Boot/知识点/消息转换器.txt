@@ -1,0 +1,9 @@
+SpringBoot默认配置了
+
+  //此方法位于一个有@Configuration注解的类中
+    @Bean
+    public StringHttpMessageConverter stringHttpMessageConverter(){
+        StringHttpMessageConverter converter  = new StringHttpMessageConverter(Charset.forName("UTF-8"));
+        return converter;
+    }
+

@@ -1,0 +1,15 @@
+<div id="app">
+	</div>
+	<template id="cherrio">
+		<<button type="button">ClickMe</button>>
+	</template>
+	
+	<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		Vue.component("name-a",{
+			template:"#cherrio"
+		})
+		var vm = new Vue({
+			el:"#app",
+		})
+	</script>

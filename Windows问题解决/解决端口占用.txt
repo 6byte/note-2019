@@ -1,0 +1,5 @@
+解决端口占用
+
+netstat  -aon|findstr  "8080"		找到PID
+taskkill /F /PID	进程号		结束进程
+		

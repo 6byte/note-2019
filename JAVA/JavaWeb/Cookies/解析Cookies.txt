@@ -1,0 +1,20 @@
+	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+
+		//新建Cookies对象
+		Cookie cookie = new Cookie("name", "郭采洁");
+		向浏览器发送Cookies
+		res.addCookie(cookie);
+		
+		//新建一个Cookies数组对象
+		Cookie[] cookies = req.getCookies();
+		//判断是否为空
+		if (cookies!= null) {
+			//Foreach迭代遍历Cookies 
+			for (Cookie cookie2 : cookies) {
+				//获取Cookies的名字
+				String nameString = cookie2.getName();
+				//获取Cookies的值
+				String keyString = cookie2.getValue();
+				System.out.println(nameString+":"+keyString);
+			}
+		}

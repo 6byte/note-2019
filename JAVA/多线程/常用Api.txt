@@ -1,0 +1,4 @@
+Thread.sleep
+在一般方法中只能TryCatch抛出异常
+不能释放锁
+wait

@@ -1,0 +1,3 @@
+Set Ws = CreateObject("Wscript.Shell")
+Ws.Run("abc.bat"),0
+一定要保存为vbs

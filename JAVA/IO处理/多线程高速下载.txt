@@ -1,0 +1,4 @@
+﻿RandomAccessFile		随机读取文件
+构造函数		RandomAccessFile​(new File("文件名")/当前目录文件名, String mode) 
+创建一个随机访问文件流，从File参数指定的文件读取，并可选地写入。  
+mode参数:	r	w

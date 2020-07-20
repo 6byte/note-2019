@@ -1,0 +1,15 @@
+
+<!-- 配置Servlet-->
+<servlet>
+<!-- 类名-->
+    <servlet-name>Hello</servlet-name>
+<!-- 包+类名=全类名-->
+    <servlet-class>com.jym.Hello</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<!-- 类名-->
+    <servlet-name>Hello</servlet-name>
+<!-- URL-->
+    <url-pattern>/Heyjym</url-pattern>
+</servlet-mapping>

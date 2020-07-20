@@ -1,0 +1,1 @@
+req.getRequestDispatcher("WEB-INF/index.html").forward(req, res);

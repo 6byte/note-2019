@@ -1,0 +1,3 @@
+@Scope 		改变实例类型
+prototype	多实例		在调用的时候创建对象
+singleton		单实例（默认）IOC容器启动就创建该对象

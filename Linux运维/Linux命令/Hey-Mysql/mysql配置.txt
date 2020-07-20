@@ -1,0 +1,22 @@
+The first step 	:判断是否安装 mariadb			rpm -qa | grep mariadb
+		-->出现mariadb-libs-5.5.60-1.el7_5.x86_64表示已经安装
+The second step	:Delete that Program use the command: 	rpm -e --nodeps mariadb-libs-5.5.35-3.el7.x86_64
+
+Then ,top mysql	 					pkill -9 mysqld
+
+Check out this program	:				rpm -qa|grep -i mysql
+DownLoad the Resource					wget -i -c http://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm
+Install the Resource						yum -y install mysql57-community-release-el7-10.noarch.rpm
+							yum -y install mysql-community-server
+Start the service						service mysqld restart
+Get the raw password					grep "password" /var/log/mysqld.log  
+Log in Mysql 						mysql -u root -p
+Change mysql password					alter user 'root'@'localhost' identified by 'Root!!2018';
+Flush 							 flush privileges 
+外部访问							CREATE USER 'root'@'%' IDENTIFIED BY ‘'Root!!2018‘;
+							grant all on *.* to 'root'@'%' identified by ''Root!!2018'  with grant option;
+
+####
+错误解决方案	ERROR 1045 (28000): Access denied for user 'root'@'localhost'
+1	在[mysqld]后面任意一行添加“skip-grant-tables”
+2	2.接下来我们需要重启MySQL：/etc/init.d/mysql restart

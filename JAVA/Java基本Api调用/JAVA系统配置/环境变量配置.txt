@@ -1,0 +1,9 @@
+详情可访问网页	https://blog.csdn.net/yin_zhy/article/details/78053990
+
+新建系统变量：	JAVA_HOME
+
+值		C:\Program Files (x86)\Java\jdk1.8.0_144
+
+新建系统变量：	CLASSPATH
+
+值		.;%JAVA_HOME%lib;%JAVA_HOME%lib\tools.jar;

@@ -1,0 +1,11 @@
+    <environments default="development">
+        <environment id="development">
+	......
+        </environment>
+
+        <environment id="test">
+	......
+        </environment>
+
+    </environments>
+将    <environments default="development">中default的值换成 id="test"就是切换环境

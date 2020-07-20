@@ -1,0 +1,2 @@
+final long l = System.currentTimeMillis();
+final int i = (int)( l % 100 );

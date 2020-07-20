@@ -1,0 +1,21 @@
+主要作用		：包扫描会扫描只要标注了@Controller,@Service,@Repository,@Component这四个注解都会被扫描到容器中
+
+@ComponentScan
+value 		要扫描的包
+
+
+excludeFilters	：指定排除规则
+excludeFilters = {
+	@Filter(type = FilterType.ANNOTATION,classes = Controller.class)
+}
+
+FilterType.ANNOTATION：	按照注解过滤
+
+includeFilters	：指定只包含的包
+
+
+
+@ComponentScans:	指定多个扫描规则
+
+
+自定义注解

@@ -1,0 +1,4 @@
+¶ÔÏó
+CloseableHttpResponse
+CloseableHttpClient
+getStatusLine

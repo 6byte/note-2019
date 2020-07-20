@@ -1,0 +1,41 @@
+public String doget(String url, Map<String, String> map) {
+    
+// TODO Auto-generated method stub
+// 创建HttpClient对象,可以无视
+CloseableHttpClient httpClient = HttpClients.createDefault();
+    try {
+        // 创建URIBuilder进行添加参数
+        uri = new URIBuilder(url);
+        // 迭代Map,給請求参数赋值
+        for (String key : map.keySet()) {
+            uri.setParameter(key, map.get(key));
+        }
+        
+    } catch ( URISyntaxException e1) {
+    }
+    try {
+        {
+            // 发行方式
+            // res = httpClient.execute(new HttpGet(uri.build()));
+        }
+        // 调试方式，可打印地址
+        HttpGet httpGet = new HttpGet(uri.build());
+        res = httpClient.execute(httpGet);
+        System.out.println(httpGet);
+        
+        if ( res.getStatusLine().getStatusCode() == 200 ) {
+            // 发起请求，并设置UTF-8编码
+            return EntityUtils.toString(res.getEntity(), "utf8");
+        }
+    } catch ( IOException e) {
+    } catch ( URISyntaxException e) {
+    } finally {
+        try {
+            res.close();
+        } catch ( IOException e) {
+        }
+    }
+    return "You got nothing！\n检查URl是否出错！\n检查网络链接是否出错\n";
+// HttpPost
+// 发起请求
+}

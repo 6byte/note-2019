@@ -1,0 +1,12 @@
+RandomAccessFile 读取文件
+
+   RandomAccessFile raf = new RandomAccessFile("C:\\Users\\Administrator\\Desktop\\Temp\\test.txt", "r");
+   byte [] flush = new byte[1024];
+   int len = -1;
+   String text = null;
+   //1.先运行    raf.read(flash),把数据读进flash
+   //2.给len赋值    (len =raf.read(flash)
+   //3.判断是否已经读完     (len =raf.read(flash)) !=-1
+   while ( (len =raf.read(flush)) !=-1) {
+    System.out.println(new String(flush,0,len));
+}

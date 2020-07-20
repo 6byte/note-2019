@@ -1,0 +1,11 @@
+用于向前端返回一个Ajax
+1.注解在返回参数前
+2.返回值是一个Bean对象
+3.
+	@RequestMapping(value = "/getAjax.action")
+	public@ResponseBody UserDao getAjax() {
+		UserDao ud = new UserDao();
+		ud.setAge(19);
+		ud.setName("刘亦菲");
+		return ud;
+	}

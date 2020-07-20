@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="constructor" class="com.jym.employee.Employee">
+	<!--public Employee(String name, int salary) -->
+	<!-- property			是为属性赋值 -->
+	<!-- constructor-arg	给构造器赋值 -->
+	<constructor-arg name ="salary" value="8000"></constructor-arg>
+	<constructor-arg name ="name" value="helo"></constructor-arg>
+</bean>
+</beans>

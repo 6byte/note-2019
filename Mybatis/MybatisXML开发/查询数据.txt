@@ -1,0 +1,10 @@
+SqlSession session = new SqlSessionFactoryBuilder().build(Resources.getResourceAsStream("mybatis-conf.xml")).openSession();
+//创建对象
+		Employee employee = new Employee();
+//第一个参数是ID，对应Mapper
+//第二个参数是对应的类====包+类全名
+		List<Employee> List = session.selectList("selectCherrio","com.jym.mybatis.test.Employee");
+//返回一个List类型，迭代查询数据
+		for (Employee employee2 : List) {
+			System.out.println(employee2.getEmail());
+		}

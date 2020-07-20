@@ -1,0 +1,8 @@
+删除表单名字
+delete from [表单名字] where [条件]
+delete from upstar where id >2;
+
+更新表单名字
+update [表单名字] set [字段]= [新值] where [条件]
+update upstar set name="Liuyifei" where age=45;
+

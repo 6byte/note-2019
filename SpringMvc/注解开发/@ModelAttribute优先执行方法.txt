@@ -1,0 +1,9 @@
+@ModelAttribute	注解一个方法，使该方法最先执行
+		注释的方法可以是一个普通方法
+
+
+
+@ModelAttribute
+public void show () {
+	System.out.println("Show message!");
+	}

@@ -1,0 +1,6 @@
+
+详情访问			https://blog.csdn.net/justry_deng/article/details/80972817
+@RequestParam（）	用于接收返回值
+如果参数前写了@RequestParam(xxx)，那么前端必须有对应的xxx名字才行(不管其是否有值）
+
+@Requestbody 		主要用于接收请求体里面的Json

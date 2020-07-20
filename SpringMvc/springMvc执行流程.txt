@@ -1,0 +1,6 @@
+1.新建工程
+2.导入包
+3.新建Springmvc
+4.新建前端HTML
+5.新建controller
+6.新建返回页面

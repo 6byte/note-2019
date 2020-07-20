@@ -1,0 +1,6 @@
+	<insert id="addEm" parameterType="com.jym.bean.EmployeeBean"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into employee values(#{name},#{address},#{age},#{id})
+	</insert>
+useGeneratedKeys="true"		打开获取主键开关
+keyProperty="id"			将键属性保存到Bean对应的id中

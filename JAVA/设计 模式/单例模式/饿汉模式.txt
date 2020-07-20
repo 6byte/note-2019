@@ -1,0 +1,13 @@
+public class SimpleClass {
+	// 创建一个全局变量，用于存储类的对象
+	private static SimpleClass simpleClass = new SimpleClass();
+
+	//创建一个私有构造器，不能被外部访问
+	private SimpleClass() {}
+	
+	public static SimpleClass getClassIntance() {
+		return simpleClass;
+	}
+}
+
+多线程不安全

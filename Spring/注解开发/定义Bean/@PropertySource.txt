@@ -1,0 +1,17 @@
+@PropertySource读取外部配置文件
+再和@Value结合使用进行赋值
+userbean的文件
+	@Value("${name.name}")
+	private String name;
+	@Value("${name.age}")
+	private Integer age;
+	@Value("${name.address}")
+	private String address;
+nameproperties
+	name.name = "\u65E0\u540D"
+	name.age=149
+	name.address=Beijing
+
+通过ConfigurableEnvironment environment = applicationContext.getEnvironment(); 
+		System.out.println(environment.getProperty("name.age"));
+能拿到properties的属性

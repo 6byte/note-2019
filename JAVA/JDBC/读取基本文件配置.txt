@@ -1,0 +1,7 @@
+
+InputStream is = Mysql.class.getClassLoader().getResourceAsStream("jdbc.properties");
+		Properties properties = new Properties();
+		properties.load(is);
+		String password = properties.getProperty("password");
+		String user = properties.getProperty("user");
+		String URL = properties.getProperty("url");

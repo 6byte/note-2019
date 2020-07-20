@@ -1,0 +1,7 @@
+1.接口里面的成员全是public 
+2.接口内的常量自动被加上public final static
+3.方法签名会自动加上public abstract
+4.可以声明内部类
+5.default 修饰的方法可以有方法体
+6.接口不能实例化
+7.不能声名静态代码块

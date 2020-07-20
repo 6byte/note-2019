@@ -1,0 +1,9 @@
+restful风格专用参数		@PathVariable 
+用法			@PathVariable String id
+实例		
+@RequestMapping(	value = "login.action/{    id   }"	)
+	//注意上下的	id  	相互对应
+	public String login(		@PathVariable( name = id ) String id	) {
+		System.out.println("Body :	");
+		return "login";
+	}

@@ -1,0 +1,9 @@
+v-bind	
+1.	缩写	：
+2.	 使用	v-bind:title="msg"	-->把msg当作变量，值等于Vue data里面的数据
+3.	相当于一个数据的单向绑定
+
+v-for
+说明：四种使用方式
+第一种	v-for="index in Array"		迭代 Array中的数据
+第二种	v-for="( flag,index) in msg"		flag是数据，index是索引

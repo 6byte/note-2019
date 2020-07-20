@@ -1,0 +1,9 @@
+文件操作
+OUTPUTSTRAM 	从内存写入硬盘
+FileOutputStream fs = new FileOutputStream(“文件路径”,"追加写开关");
+输出换行 	\r\n
+
+INPUTSTREAM	从硬盘写入内存
+ FileInputStream fs = new FileInputStream(“文件路径”);
+
+

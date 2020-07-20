@@ -1,0 +1,5 @@
+选择典型安装Mysql，记得添加Path路径
+1、找到配置文件my.ini
+2、搜索mysqld关键字，在mysqld下面添加skip-grant-tables
+3、重启Mysql服务
+4、大功告成

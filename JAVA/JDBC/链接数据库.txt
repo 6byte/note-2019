@@ -1,0 +1,44 @@
+String URL = "jdbc:mysql://localhost:3306/imooc";
+String USER = "liulx";
+String PASSWORD = "123456";
+Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+
+比较正式的链接方式
+public void method1(String[] args) throws SQLException {
+		// TODO Auto-generated method stub
+		System.out.println("Running");
+		Driver driver = new com.mysql.jdbc.Driver();
+		Properties properties = new Properties();
+		properties.setProperty("user", "root");
+		properties.setProperty("password", "cence0712");
+		String URL = "jdbc:mysql://localhost:3306/test";
+		Connection conn = DriverManager.getConnection(URL);
+		//将用户名封装在Properties中
+		
+	}
+	//方式二通过反射实现
+	public void method2() throws Exception {
+		Class class1 = Class.forName("com.mysql.jdbc.Driver");
+		Driver driver= (Driver) class1.newInstance();
+		Properties properties = new Properties();
+		properties.setProperty("user", "root");
+		properties.setProperty("password", "cence0712");
+		String URL = "jdbc:mysql://localhost:3306/test";
+		Connection conn = DriverManager.getConnection(URL);
+		
+	}
+//解耦合方式
+CLASS文件
+	InputStream is = Mysql.class.getClassLoader().getResourceAsStream("jdbc.properties");
+		Properties properties = new Properties();
+		properties.load(is);
+		String password = properties.getProperty("password");
+		String user = properties.getProperty("user");
+		String URL = properties.getProperty("url");
+		
+jdbc.properties 文件//放src里面
+#	\u83B7\u53D6\u57FA\u672C\u4FE1\u606F
+user = root
+password = 111111
+url  = jdbc:mysql://localhost:3306/test
+driverClass = com.mysql.jdbc.Driver

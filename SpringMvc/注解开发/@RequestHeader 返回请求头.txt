@@ -1,0 +1,7 @@
+返回请求头	@RequestHeader (value = "Accept")String head
+列子
+	@RequestMapping(value = "/header.action")
+	public String head(@RequestHeader (value = "Accept")String head) {
+		System.out.println(head);
+		return "head";
+	}

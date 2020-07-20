@@ -1,0 +1,158 @@
+目录：
+1:安装配置NODEJS  		
+2:安装配置NGINX		#代理转发
+3:安装配置PM2		#后台运行
+4:一定要配置防火墙iptables
+
+#安装			node js	yum install -y nodejs
+
+#安装git			yum install git -y
+
+#安装nvm			git clone git://github.com/creationix/nvm.git ~/nvm
+
+#设置nvm 自动运行;		echo "source ~/nvm/nvm.sh" >> ~/.bashrc
+			source ~/.bashrc
+
+#安装node.js		nvm install v6.0.0
+
+#使用nodejs		nvm use v6.0.0
+
+#安装nodejs				sudo yum install nodejs 
+
+
+
+
+-------------------------------------------------------------------------------------
+
+
+
+
+#原文网址					https://www.jianshu.com/p/849343f679aa
+#安装nginx				sudo yum install -y nginx	#安装nginx
+					sudo systemctl start nginx.service #设置开机运行
+					sudo systemctl enable nginx.service
+
+#nginx根目录				/usr/share/nginx/html
+#nginx配置目录				/etc/nginx/nginx.conf 
+#代理配置					vi /etc/nginx/conf.d/web80.conf 
+
+
+nginx 					服务器重启命令，关闭
+nginx -s reload ：				修改配置后重新加载生效
+nginx -s reopen ：				重新打开日志文件
+nginx -t -c /etc/nginx.conf 			测试nginx配置文件是否正确
+nginx -c /etc/nginx/to/nginx.conf		启动nginx
+ps aux|grep nginx				查看NIGINX进程
+
+关闭nginx：
+nginx -s stop :快速停止nginx
+quit ：完整有序的停止nginx
+------------------------------------------------------------------------------------------------------------------------------
+
+
+配置nginx
+
+
+server {
+        
+listen       80;
+     				#监听80端口
+server_name  www.yooven.xyz;    		#要访问的域名，我这里用的测试域名，如果有多个，用逗号分开
+ 
+   
+charset utf8;
+ 
+       
+
+location / {
+          				#可以添加多个location
+proxy_pass       http://127.0.0.1:10000;              	#映射到代理服务器，可以是ip加端口,   或url 
+  
+proxy_set_header Host      $host;
+          
+proxy_set_header X-Real-IP $remote_addr;
+        
+proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+ 
+   
+proxy_set_header X-Nginx-Proxy true;
+proxy_pass http://yooven;
+proxy_redirect off;
+    }
+    }
+
+
+
+#测试nginx是否有语法错误: nginx -t
+#nginx默认目录 /usr/share/nginx/html
+
+------------------------------------------------------------------------------------------------------------------------------
+#安装cnpm:		npm install -g cnpm --registry=https://registry.npm.taobao.org 
+
+
+#安装pm2:		cnpm install -g pm2	#下载
+			pm2 start app.js –watch -i 2    #启动
+			pm2 delete 0 		#停止，后面的数字代表序号
+			pm2 restart all		#重启
+原网页：			https://www.cnblogs.com/liusixin/p/7007340.html
+------------------------------------------------------------------------------------------------------------------------------
+
+#安装解压文件		yum install -y lrzsz
+#unzip解压		yum install zip unzip
+# 将解压包拷贝到指定目录	mv  mongodb-linux-x86_64-3.0.6/ /usr/local/mongodb    
+#将其添加到 PATH 路径中	export PATH=/usr/local/mongodb/bin:$PATH 	
+
+
+
+------------------------------------------------------------------------------------------------------------------------------
+参见原网址，非常详细：https://www.cnblogs.com/Lovebugs/p/8606000.html
+
+
+
+
+#安装MONGODB
+wget http://fastdl.mongodb.org/linux/mongodb-linux-i686-1.8.2.tgz		#下载mongod
+tar zxf mongodb-linux-i686-1.8.2.tgz					#解压mongod
+vi /etc/mongod.conf					#修改配置 把BINDIP 的地址改为0.0.0.0,所有机器均可以访问
+service mongod start					#启动服务
+service mongod stop					#关闭服务
+
+cd /usr/local/mongodb/bin 	#更改端口<!important>
+sudo vi mongodb.conf	
+
+
+
+
+##########################################################################
+
+
+
+这样就会进入到mysql服务，也就是我们常用的mysql命令行，这时就要来修改root用户的密码了
+
+use mysql;
+update user set password=password('new password') where user='root';
+flush privileges;
+##########################################################################
+
+---------------------------------------------------------------------------------------------------------
+##原文地址	https://www.cnblogs.com/shawhe/p/9485746.html
+##防火墙配置
+vi /etc/sysconfig/iptables	#编辑文件
+
+ :INPUT ACCEPT [0:0]
+:FORWARD ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]
+-A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+-A INPUT -p icmp -j ACCEPT
+-A INPUT -i lo -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 8080 -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 8081 -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 8082 -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 3306 -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 443 -j ACCEPT
+-A INPUT -j REJECT --reject-with icmp-host-prohibited
+-A FORWARD -j REJECT --reject-with icmp-host-prohibited
+COMMIT
+---------------------------------------------------------------------------------------------------------

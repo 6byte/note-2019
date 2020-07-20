@@ -1,0 +1,13 @@
+v-if和v-show
+1.基本作用：用于控制元素显示和隐藏
+2.区别，v-if会删除元素，v-show添加样式隐藏元素
+3用法：
+<h1 v-if="flag">三观</h1>
+<h1 v-show="flag">三观</h1>
+
+methods: {
+	toggle() {
+	this.flag = !this.flag
+	console.log(this.flag);
+	}
+}

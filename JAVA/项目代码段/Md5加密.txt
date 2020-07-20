@@ -1,0 +1,5 @@
+//md5:接收一个需要加密的内容
+//返回一个加密后Base64编码的值
+public String getMd5(String md5) throws NoSuchAlgorithmException {
+    return (new BASE64Encoder()).encode((MessageDigest.getInstance("MD5")).digest(md5.getBytes()));
+}

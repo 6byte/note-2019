@@ -1,0 +1,6 @@
+注解属性			
+参数			说明			值			类型
+value = path		请求路径			自定义			字符串
+method			请求方式			Post/Get/Delete		字符串数组
+parama			请求参数			自定义			字符串数组		请求地址必须与param一致才能放行
+headers			请求头			自定义			字符串数组		

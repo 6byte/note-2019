@@ -1,0 +1,1 @@
+文字居中样式	text-center

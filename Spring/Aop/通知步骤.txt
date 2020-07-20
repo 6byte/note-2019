@@ -1,0 +1,42 @@
+
+前置通知	 @Before		程序运行前执行
+后置通知	 @After		程序运行后执行
+返回通知	 @AfterReturning	程序正常运行
+异常通知   @AfterThrowing	程序异常执行
+环绕通知	 @Around	手动推进方法执行
+
+
+Aop使用
+1.确定目标方法
+package com.jym.aop;
+public class AopDiv {
+	public int div(int x, int y) {	return x / y;	}
+}
+2.定义切面类
+	1.切面类注解@Aspect	<必须，非常重要>
+
+	2.定义切面方法
+		@Pointcut("execution(public int com.jym.aop.AopDiv.div(int, int)))")
+		public void pointcut() {}
+	
+		@Before ("pointcut()")
+		public void logStart() {
+			System.out.println("除法运行....");
+		}
+	3.将切面类和目标方法注入IOC容器	<必须，非常重要>
+
+		@Bean
+		public AopMain getAopMain() {
+			return new AopMain();
+		}
+	
+		@Bean 
+		public AopDiv getAopDiv() {
+			return new AopDiv();
+		}
+	4.在配置类开启Aspect自动代理
+		@EnableAspectJAutoProxy<必须，非常重要>
+
+	5.记得开启包扫描
+		@ComponentScan(value = "com.jym.CarBean,com.jym.UserBean,com.jym.dao,com.jym.aop")
+

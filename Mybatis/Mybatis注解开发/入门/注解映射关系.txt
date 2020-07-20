@@ -1,0 +1,34 @@
+    /**
+     * *Results       开启映射
+     * *id            Results的名字，可以供其他方法调用
+     * *value         一个包含Result对象的数组
+     * *column        mysql的字段名，
+     * *property      java的属性
+     * *id            表示该column该字段是否为主键，默认条件下为非主键
+     * *one           用于表与表之间一对一映射时使用
+     * *select        一对一查询所要执行的方法名
+     * *fetchType     表示数据加载形式（FetchType.EAGER表示立即加载，FetchType.LAZY表示懒加载
+     * *
+     */
+
+    @Select("select *from people  where name = #{name} ")
+    @Results(id = "abc", value = {
+//-------------------------------------------------------------->
+            @Result(id = true, column = "id", property = "id"),
+            @Result(column = "name", property = "name"),
+            //单人开发，命名无冲突可以不写
+            @Result(column = "address", property = "address"),
+            @Result(column = "phone", property = "phone"),
+//---------------------------------------------------------------->            
+            //column = "id"         id是外键id
+            //property = "card"     属性对应card的表
+            @Result(property = "card", column = "id", one = @One(select = "com.Dao.CarDao.findCard", fetchType = FetchType.EAGER))
+    }
+    )
+    public Person selectAll(@Param("name") String name);
+    /*
+    * 1.先执行主查询方法
+    * 2.再执行内部One或者Many查找方法
+    * 3.一对一查询考虑不用List
+    * 
+    * */

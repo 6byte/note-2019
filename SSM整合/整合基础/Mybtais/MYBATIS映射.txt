@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.dao.IUserDao">
+<!-- 
+    namespace:用于对应IDAO接口                                   ！！!非常重要，容易出错
+ -->
+
+    <!--
+        parameterType	:用于接收输入类型，是IDAO方法中参数的类型
+        resultType 		:用于接收返回值类型                     ！！!非常重要
+
+        id              :对应ID接口中的方法，必须与之完全对应
+        resultMap       :在一对多，多对多查询使用               ！！!非常重要
+
+     -->
+    <select id="findAll" resultType="com.example.bean.UserBean" parameterType="Integer" >
+            select *from use2
+    </select>
+
+</mapper>

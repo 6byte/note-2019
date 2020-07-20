@@ -1,0 +1,14 @@
+@Autowire
+自动将类装载到容器中   
+
+标注在方法
+，属性等地方标注
+
+
+@Controller
+public class SController {
+	@Autowired
+	private SService sservice ;
+}
+不赋初始值，会报错
+@Autowired(required = false)忽略初始值

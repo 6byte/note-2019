@@ -1,0 +1,19 @@
+private static void doGet(String url) throws ParseException, IOException {
+		// TODO Auto-generated method stub
+		CloseableHttpClient httpClient = HttpClients.createDefault();
+		
+		HttpGet httpGet = new HttpGet(url);
+		
+		CloseableHttpResponse response =  httpClient.execute(httpGet);
+		
+		//如果返回状态是200，代表成功
+		if(response.getStatusLine().getStatusCode() == 200) {
+			String content = EntityUtils.toString(response.getEntity(),"utf8");
+			System.out.println(content);
+		}
+		else {
+			response.close();
+			httpClient.close();
+		}
+		
+	}

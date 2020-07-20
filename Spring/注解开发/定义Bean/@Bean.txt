@@ -1,0 +1,8 @@
+@Bean
+//给容易起注册一个Bean；类型为返回值的类型，id默认是用方法名作为id
+下面这个bean的方法名是getBean
+使用方法
+@Bean
+	public UserBean getBean() {
+		return new UserBean("刘亦菲", 16, "北京");
+	}

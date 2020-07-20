@@ -1,0 +1,15 @@
+模板创建方法
+1.创建模板
+	<template id ="hey">	//必须在template中注册 ，必须有ID
+	<h1>hello</h1>
+</template>
+2.注册模板
+Vue.component('cpn1',{	//cpn1是标签名和上面的template对应
+	template:"#hey",
+})
+
+3.使用模板
+
+let vm = new Vue({		
+	el:"#app"		//<cpn1></cpn1>必须在Vue实例中
+})

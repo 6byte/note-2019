@@ -1,0 +1,6 @@
+通知方法
+1.前置通知	(@Before)
+2.后置通知	(@After)
+3.返回通知	(@AfterReturning)
+4.异常通知	(@AfterThrowing)
+5.环绕通知	(@Around)动态代理，手动推荐目标方法运行(joinPoint.procced)

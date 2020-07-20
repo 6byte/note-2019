@@ -1,0 +1,14 @@
+﻿
+String resource = "mybatis-conf.xml";
+		InputStream inputStream = Resources.getResourceAsStream(resource);
+		SqlSessionFactory sqlSessionFactory =
+		 new SqlSessionFactoryBuilder().build(inputStream);
+
+		//便捷写法，推荐
+ SqlSession openSession = (new SqlSessionFactoryBuilder().build(Resources.getResourceAsStream(r"mybatis-conf.xml"))).openSession();
+		SqlSession openSession = sqlSessionFactory.openSession();
+		//第一个参数是递唯一标识符
+		//第二个参数是执行sql要用的参数
+		Class class= openSession.selectOne("selectEmp",10);
+		System.out.println(Class get());
+		openSession.close();

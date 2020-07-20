@@ -1,0 +1,3 @@
+
+res.setStatus(302);
+res.setHeader("Location", "index.html");
